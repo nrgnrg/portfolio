@@ -1,21 +1,21 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+export const isNul = (value: unknown): value is null => value === null;
 
-export const isNul = (value: any): value is null => value === null;
+export const isUndefined = (value: unknown): value is undefined =>
+  value === void 0;
 
-export const isUndefined = (value: any): value is undefined => value === void 0;
+export const isDefined = (value: unknown) =>
+  !isUndefined(value) && !isNul(value);
 
-export const isDefined = (value: any) => !isUndefined(value) && !isNul(value);
-
-export const isString = (value: any): value is string =>
+export const isString = (value: unknown): value is string =>
   typeof value === "string";
 
-export const isNumber = (value: any): value is number =>
+export const isNumber = (value: unknown): value is number =>
   typeof value === "number";
 
-export const isFunction = (value: any): value is Function =>
+export const isFunction = (value: unknown): value is Function =>
   typeof value === "function" || value instanceof Function;
 
-export const isObject = (value: any): value is object => {
+export const isObject = (value: unknown): value is object => {
   const type = typeof value;
   return (
     !isNul(value) &&
@@ -27,9 +27,7 @@ export const isObject = (value: any): value is object => {
 export const isEmptyObject = (value: object): value is {} =>
   isObject(value) && Object.entries(value).length === 0;
 
-export const isArray = (value: any): value is [] => Array.isArray(value);
+export const isArray = (value: unknown): value is [] => Array.isArray(value);
 
-export const isEqual = (a: any, b: any) =>
+export const isEqual = (a: unknown, b: unknown) =>
   JSON.stringify(a) === JSON.stringify(b);
-
-/* eslint-enable @typescript-eslint/no-explicit-any */
