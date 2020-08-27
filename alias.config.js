@@ -3,11 +3,10 @@ const path = require("path");
 
 const aliases = {
   "@root": "./",
-  "@src": "src",
   "@c": "src/components",
-  "@views": "src/views",
   "@assets": "src/assets",
   "@utils": "src/utils",
+  "@views": "src/views",
   "@store": "src/store",
   "@io": "src/io"
 };

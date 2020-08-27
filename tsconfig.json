@@ -11,14 +11,21 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "allowJs": true,
     "types": [
       "webpack-env",
       "jest"
     ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      "@root/*": ["./*"],
+      "@c/*": ["src/components/*"],
+      "@asset/*": ["src/assets/*"],
+      "@utils": ["src/utils"],
+      "@utils/*": ["src/utils/*"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+      "@views/*": ["src/views/*"],
     },
     "lib": [
       "esnext",
